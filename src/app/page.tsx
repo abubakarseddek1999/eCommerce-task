@@ -19,6 +19,8 @@ import EthosSection from "../components/home/EthosSection"
 import Gift from "../components/home/Gift"
 import WinterCollection from "../components/home/WinterCollection"
 import GiftNotes from "../components/home/GiftNotes"
+import RecentlyViewed from "../components/home/RecentlyViewed"
+import ExploreCollection from "../components/home/ExploreCollection"
 export const productsByCategory: Record<
   string,
   Array<{ name: string; price: number; originalPrice: number; image: string }>
@@ -107,90 +109,10 @@ export default function HomePage() {
       <BestSellers />
 
       {/* Explore Our Collection */}
-      <section className="py-12 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12">Explore Our Collection</h2>
-
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
-            {[
-              { name: "Rings", image: "/collection-rings.jpg" },
-              { name: "Earrings", image: "/collection-earrings.jpg" },
-              { name: "Pendants", image: "/collection-pendants.jpg" },
-              { name: "Bracelets", image: "/collection-bracelets.jpg" },
-              { name: "Necklace", image: "/collection-necklace.jpg" },
-              { name: "Bangles", image: "/collection-bangles.jpg" },
-            ].map((category) => (
-              <div key={category.name} className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-full aspect-square mb-2 md:mb-3 bg-white shadow-md group-hover:shadow-xl transition-all">
-                  <img
-                    src={category.image || "/placeholder.svg"}
-                    alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <p className="text-center font-semibold text-xs md:text-sm">{category.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+       <ExploreCollection />
 
       {/* Recently Viewed */}
-      <section className="py-12 bg-white md:bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8">Recently Viewed</h2>
-
-          <div className="block md:hidden">
-            <Swiper
-              modules={[Pagination]}
-              spaceBetween={12}
-              slidesPerView={2.2}
-              pagination={{ clickable: true }}
-              className="recently-viewed-swiper"
-            >
-              {[1, 2, 3, 4].map((item) => (
-                <SwiperSlide key={item}>
-                  <Card className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-lg transition-all">
-                    <div className="relative overflow-hidden bg-white">
-                      <img
-                        src={`/jewelry-item-.jpg?height=300&width=250&query=jewelry item ${item}`}
-                        alt="Product"
-                        className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-2">
-                      <h3 className="font-semibold text-xs mb-1 truncate">TWISTED PETAL GOLD BRACELET</h3>
-                      <span className="text-xs font-bold">₹7990</span>
-                    </div>
-                  </Card>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
-          {/* Desktop grid */}
-          <div className="hidden md:grid grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item) => (
-              <Card
-                key={item}
-                className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-lg transition-all"
-              >
-                <div className="relative overflow-hidden bg-white">
-                  <img
-                    src={`/jewelry-item-.jpg?height=300&width=250&query=jewelry item ${item}`}
-                    alt="Product"
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-3">
-                  <h3 className="font-semibold text-xs mb-1">TWISTED PETAL GOLD BRACELET</h3>
-                  <span className="text-sm font-bold">₹7990</span>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+       <RecentlyViewed />
 
       {/* Gift Notes Section */}
        <GiftNotes />
