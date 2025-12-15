@@ -48,10 +48,26 @@ function Button({
   }) {
   const Comp = asChild ? Slot : 'button'
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const btn = e.currentTarget
+    btn.classList.add("animate-press")
+
+    setTimeout(() => {
+      btn.classList.remove("animate-press")
+    }, 150)
+
+    props.onClick?.(e)
+  }
+
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      onClick={handleClick}
+      className={cn(
+        buttonVariants({ variant, size }),
+        "transition-transform duration-150 active:scale-95",
+        className
+      )}
       {...props}
     />
   )

@@ -170,3 +170,6 @@ html {
     height: auto;
   }
 }
+.animate-press {
+  transform: scale(0.95);
+}
