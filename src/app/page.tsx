@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { Search, ShoppingBag, Heart, Star, ChevronRight, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+import { Button } from "../components/ui/button"
+import { Card } from "../components/ui/card"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
