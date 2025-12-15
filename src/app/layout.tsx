@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo.png",
   },
 }
 
@@ -38,7 +38,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"  >
+      <head>
+        <link rel="icon" href="/logo.png" sizes="any" />
+        
+      </head>
+      {/* favicons */}
+      <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
