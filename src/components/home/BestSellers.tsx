@@ -13,7 +13,7 @@ import { productsByCategory } from "@/src/app/page";
 export default function BestSellers() {
       const [activeCategory, setActiveCategory] = useState("Rings")
     
-      const categories = ["Rings", "Earrings", "Pendants", "Bracelets", "Bangles"]
+      const categories = ["Rings", "Earrings", "Pendants", "Bracelets"]
     
     return (
         <div>

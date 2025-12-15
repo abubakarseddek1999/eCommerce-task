@@ -2,7 +2,7 @@ import { ChevronRight, Search } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function Hero() {
-    const categories = ["Rings", "Earrings", "Pendants", "Bracelets", "Bangles"]
+    const categories = ["Rings", "Earrings", "Pendants", "Bracelets"]
     return (
         <div>
             {/* Hero Section */}

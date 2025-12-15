@@ -31,10 +31,10 @@ export default function RecentlyViewed() {
                                     slidesPerView: 3.2, // desktop
                                 },
                             }}
-                            pagination={{ clickable: true }}
+                            // pagination={{ clickable: true }}
                             className="recently-viewed-swiper"
                         >
-                            {[1, 2, 3, 4].map((item) => (
+                            {[1, 2, 3, 4,5,6,7,8,9,10].map((item) => (
                                 <SwiperSlide key={item} className="mb-10">
                                     <Card className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-lg transition-all">
                                         <div className="relative overflow-hidden bg-white">
