@@ -22,13 +22,23 @@ export default function Reviews() {
                         <Swiper
                             modules={[Pagination, Autoplay]}
                             spaceBetween={16}
-                            slidesPerView={3}
+                            breakpoints={{
+                                0: {
+                                  slidesPerView: 1.2, // mobile
+                                },
+                                640: {
+                                  slidesPerView: 2.2, // tablet
+                                },
+                                1024: {
+                                  slidesPerView: 3.2, // desktop
+                                },
+                              }}
                             pagination={{ clickable: true }}
                             autoplay={{ delay: 4000 }}
                             className="reviews-swiper pb-125"
                         >
-                            {[1, 2, 3].map((item) => (
-                                <SwiperSlide key={item}>
+                            {[1, 2, 3, 4].map((item) => (
+                                <SwiperSlide key={item} className="mb-10">
                                     <Card className="p-5 border-0 shadow-lg">
                                         <div className="flex gap-1 mb-3">
                                             {[...Array(5)].map((_, i) => (

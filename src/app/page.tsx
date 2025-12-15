@@ -1,13 +1,4 @@
 "use client"
-import { Search, ShoppingBag, Heart, Star, ChevronRight, Menu, X } from "lucide-react"
-
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import { Button } from "../components/ui/button"
-import { Card } from "../components/ui/card"
 import Footer from "../components/share/Footer"
 import Navbar from "../components/share/Navbar"
 import Hero from "../components/home/Hero"
@@ -102,37 +93,27 @@ export default function HomePage() {
       <div className="sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
         <Navbar />
       </div>
-
       <Hero />
-
       {/* Bestsellers Section */}
       <BestSellers />
-
       {/* Explore Our Collection */}
-       <ExploreCollection />
-
+      <ExploreCollection />
       {/* Recently Viewed */}
-       <RecentlyViewed />
-
+      <RecentlyViewed />
       {/* Gift Notes Section */}
-       <GiftNotes />
+      <GiftNotes />
       {/* Winter Collection & Lab Grown - Side by Side */}
       <WinterCollection />
-
       {/* Gifting Section */}
       <Gift />
-
       {/* User Gallery CTA */}
       <UserGallery />
       {/* Ethos Section */}
-       <EthosSection />
-
+      <EthosSection />
       {/* Features Section - Lab Grown */}
       <Features />
-
       {/* Reviews Section */}
       <Reviews />
-
       <Footer />
     </div>
   )

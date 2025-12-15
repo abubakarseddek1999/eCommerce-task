@@ -18,18 +18,33 @@ export default function Gift() {
                         </p>
                     </div>
 
-                    <div className="">
+                    <div className=" ">
                         <Swiper
-                            modules={[Pagination]}
+                            modules={[Pagination, Autoplay]}
                             spaceBetween={20}
-                            slidesPerView={3}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                              }}
+                            breakpoints={{
+                                0: {
+                                  slidesPerView: 1.2, // mobile
+                                },
+                                640: {
+                                  slidesPerView: 2.2, // tablet
+                                },
+                                1024: {
+                                  slidesPerView: 3.2, // desktop
+                                },
+                              }}
                             pagination={{ clickable: true }}
                             className="pb-12"
                         >
                             {[
                                 {
                                     title: "BIRTHDAY",
-                                    desc: "Celebrate their special day with a timeless piece that shines as bright as they do.",
+                                    desc: "Celebrate their special day with a timeless piece that shines as bright .",
                                     cta: "Shop Birthday Gifts",
                                     image: "/birthday-jewelry-gift-celebration.jpg",
                                 },
@@ -47,13 +62,13 @@ export default function Gift() {
                                 },
                                 {
                                     title: "BIRTHDAY",
-                                    desc: "Celebrate their special day with a timeless piece that shines as bright as they do.",
+                                    desc: "Celebrate their special day with a timeless piece that shines as bright .",
                                     cta: "Shop Birthday Gifts",
                                     image: "/birthday-jewelry-gift-celebration.jpg",
                                 },
                             ].map((gift, idx) => (
                                 <SwiperSlide key={idx}>
-                                    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                                    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group mb-10">
                                         <div className="relative overflow-hidden">
                                             <img
                                                 src={gift.image || "/placeholder.svg"}

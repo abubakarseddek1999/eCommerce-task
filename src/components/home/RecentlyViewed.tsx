@@ -13,14 +13,29 @@ export default function RecentlyViewed() {
 
                     <div className="">
                         <Swiper
-                            modules={[Pagination]}
+                            modules={[Pagination, Autoplay]}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
                             spaceBetween={12}
-                            slidesPerView={3.2}
+                            breakpoints={{
+                                0: {
+                                    slidesPerView: 2.2, // mobile
+                                },
+                                640: {
+                                    slidesPerView: 2.2, // tablet
+                                },
+                                1024: {
+                                    slidesPerView: 3.2, // desktop
+                                },
+                            }}
                             pagination={{ clickable: true }}
                             className="recently-viewed-swiper"
                         >
                             {[1, 2, 3, 4].map((item) => (
-                                <SwiperSlide key={item}>
+                                <SwiperSlide key={item} className="mb-10">
                                     <Card className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-lg transition-all">
                                         <div className="relative overflow-hidden bg-white">
                                             <img
@@ -38,7 +53,7 @@ export default function RecentlyViewed() {
                             ))}
                         </Swiper>
                     </div>
-                  
+
                 </div>
             </section>
         </div>

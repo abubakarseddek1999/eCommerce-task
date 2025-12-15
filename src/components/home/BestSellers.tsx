@@ -67,7 +67,7 @@ export default function BestSellers() {
                             className="bestseller-swiper"
                         >
                             {productsByCategory[activeCategory].map((product, idx) => (
-                                <SwiperSlide key={idx}>
+                                <SwiperSlide key={idx} className="mb-10">
                                     <Card className="group cursor-pointer overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-300">
                                         <div className="relative overflow-hidden bg-gray-50">
                                             <img
