@@ -1,3 +1,5 @@
+import { Button } from "../ui/button";
+
 export default function GiftNotes() {
     return (
         <div>
